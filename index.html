@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محول عملات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav style="background: var(--primary-color); color: white; padding: 1rem; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: center; gap: 2rem; box-shadow: var(--shadow);">
+    <a href="#home" style="color: white; text-decoration: none; font-weight: bold;">الرئيسية</a>
+    <a href="#about" style="color: white; text-decoration: none; font-weight: bold;">من نحن</a>
+    <a href="#privacy" style="color: white; text-decoration: none; font-weight: bold;">سياسة الخصوصية</a>
+</nav>
+<div id="home" style="padding-top: 100px;"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                
+                <h1>محول العملات</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+                الوضع الليلي
+            </button>
+        </header>
+
+        <div class="converter-card">
+            <div class="converter-content">
+                <h2 class="converter-title">محول العملات العالمي</h2>
+                
+                <form class="converter-form" id="converterForm">
+                    <div class="amount-group">
+                        <label for="amount">المبلغ</label>
+                        <div class="amount-input">
+                            <input type="number" id="amount" value="1" min="0" step="0.01">
+                        </div>
+                    </div>
+                    
+                    <div class="currency-selector">
+                        <div class="currency-group">
+                            <label for="fromCurrency">من</label>
+                            <div class="currency-select">
+                                <img id="fromFlag" src="https://flagsapi.com/US/flat/64.png" alt="From Currency">
+                                <select id="fromCurrency"></select>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="swap-btn" id="swapBtn">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        
+                        <div class="currency-group">
+                            <label for="toCurrency">إلى</label>
+                            <div class="currency-select">
+                                <img id="toFlag" src="https://flagsapi.com/EG/flat/64.png" alt="To Currency">
+                                <select id="toCurrency"></select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-container" id="resultContainer">
+                        <div class="result-text" id="resultText">1 USD = 30.90 EGP</div>
+                        <div class="rate-text" id="rateText">1 USD = 30.90 EGP</div>
+                    </div>
+                    
+                    <button type="submit" class="convert-btn" id="convertBtn">
+                        <i class="fas fa-calculator"></i>
+                        تحويل
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="feature-title">تحويل فوري</h3>
+                <p class="feature-desc">احصل على أسعار صرف العملات فورياً مع تحديثات لحظية للأسعار.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="feature-title">180+ عملة</h3>
+                <p class="feature-desc">يدعم جميع عملات العالم الرئيسية والثانوية مع أسعار دقيقة.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="feature-title">مخططات تفاعلية</h3>
+                <p class="feature-desc">تابع تغيرات أسعار العملات عبر المخططات التفاعلية والبيانية.</p>
+            </div>
+        </div>
+
+        <div class="popular-currencies">
+            <h3 class="section-title">العملات الشائعة</h3>
+            <div class="currency-grid" id="popularCurrencies">
+                <!-- Popular currencies will be added here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="chart-container" id="chartContainer">
+            <!-- Chart will be rendered here -->
+        </div>
+
+        <footer>
+            <p>© جميع الحقوق محفوظة  2025</p>
+            <a href="https://paypal.me/bloomff?country.x=SA&locale.x=ar_AR" class="donate-btn" target="_blank">
+                <i class="fab fa-paypal"></i>
+                ادعم الموقع بـ 1$
+            </a>
+        </footer>
+    </div>
+
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText">تم تحديث سعر الصرف بنجاح</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+
+<section id="about" style="padding: 4rem 2rem; background: var(--card-bg); margin-top: 3rem; border-radius: 15px; box-shadow: var(--shadow); max-width: 900px; margin-inline: auto;">
+    <h2 style="color: var(--primary-color); margin-bottom: 1rem;">من نحن</h2>
+    <p style="color: var(--text-color); line-height: 1.8;">نحن فريق مهتم بتقديم أدوات مفيدة وسريعة عبر الإنترنت. هدفنا هو توفير آلة حاسبة دقيقة ومحدثة لتحويل العملات بين مختلف الدول بكل سهولة وسرعة، مع تصميم بسيط ومريح للمستخدم.</p>
+</section>
+
+<section id="privacy" style="padding: 4rem 2rem; background: var(--card-bg); margin-top: 3rem; margin-bottom: 4rem; border-radius: 15px; box-shadow: var(--shadow); max-width: 900px; margin-inline: auto;">
+    <h2 style="color: var(--primary-color); margin-bottom: 1rem;">سياسة الخصوصية</h2>
+    <p style="color: var(--text-color); line-height: 1.8;">
+        نحن نحترم خصوصيتك بشكل كامل. لا نقوم بجمع أي معلومات شخصية من المستخدمين عند استخدام هذه الأداة. جميع العمليات تتم على جهازك فقط، ولا يتم تخزين أي بيانات أو مشاركتها مع أي طرف ثالث.
+        باستخدامك لهذا الموقع، فإنك توافق على سياسة الخصوصية هذه.
+    </p>
+</section>
+
+
+
+<script src="js/script.js"></script>
+</body>
+</html>
