@@ -21,6 +21,90 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- إعلان Adsterra متجاوب مع زر تخطي -->
+<div id="ad-container" style="padding: 20px; background-color: #f9f9f9; text-align: center;">
+    <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; overflow: hidden;">
+        <iframe src="https://www.profitableratecpm.com/supss8jt7?key=97a240d7a1958f966ba7019a3f9a13ab"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                scrolling="no" allowfullscreen></iframe>
+        <!-- إعلان Adsterra متجاوب مع زر تخطي -->
+<div id="ad-container" style="padding: 20px; background-color: #f9f9f9; text-align: center;">
+    <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; overflow: hidden;">
+        <iframe src="https://www.profitableratecpm.com/supss8jt7?key=97a240d7a1958f966ba7019a3f9a13ab"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                scrolling="no" allowfullscreen></iframe>
+    </div>
+    <button id="skip-btn" onclick="skipAd()" style="margin-top: 10px; padding: 10px 20px;">تخطي خلال 5</button>
+</div>
+
+<div id="thanks-message" style="display: none; text-align: center; padding: 20px; color: green;">
+    شكراً لمشاهدتك الإعلان!
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let countdown = 5;
+    const skipBtn = document.getElementById("skip-btn");
+
+    skipBtn.disabled = true;
+    skipBtn.innerText = "تخطي خلال " + countdown;
+
+    const timer = setInterval(() => {
+        countdown--;
+        if (countdown > 0) {
+            skipBtn.innerText = "تخطي خلال " + countdown;
+        } else {
+            clearInterval(timer);
+            skipBtn.innerText = "تخطي الإعلان";
+            skipBtn.disabled = false;
+        }
+    }, 1000);
+
+    window.skipAd = function () {
+        document.getElementById("ad-container").style.display = "none";
+        document.getElementById("thanks-message").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("thanks-message").style.display = "none";
+        }, 3000);
+    };
+});
+</script>
+    </div>
+    <button id="skip-btn" onclick="skipAd()" style="margin-top: 10px; padding: 10px 20px;">تخطي خلال 5</button>
+</div>
+
+<div id="thanks-message" style="display: none; text-align: center; padding: 20px; color: green;">
+    شكراً لمشاهدتك الإعلان!
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let countdown = 5;
+    const skipBtn = document.getElementById("skip-btn");
+
+    skipBtn.disabled = true;
+    skipBtn.innerText = "تخطي خلال " + countdown;
+
+    const timer = setInterval(() => {
+        countdown--;
+        if (countdown > 0) {
+            skipBtn.innerText = "تخطي خلال " + countdown;
+        } else {
+            clearInterval(timer);
+            skipBtn.innerText = "تخطي الإعلان";
+            skipBtn.disabled = false;
+        }
+    }, 1000);
+
+    window.skipAd = function () {
+        document.getElementById("ad-container").style.display = "none";
+        document.getElementById("thanks-message").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("thanks-message").style.display = "none";
+        }, 3000);
+    };
+});
+</script>
 
 <nav style="background: var(--primary-color); color: white; padding: 1rem; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: center; gap: 2rem; box-shadow: var(--shadow);">
     <a href="#home" style="color: white; text-decoration: none; font-weight: bold;">الرئيسية</a>
@@ -159,7 +243,21 @@
 
 
 <script src="js/script.js"></script>
-    <script>
+<!-- إعلان Adsterra متجاوب مع زر تخطي -->
+<div id="ad-container" style="padding: 20px; background-color: #f9f9f9; text-align: center;">
+    <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; overflow: hidden;">
+        <iframe src="https://www.profitableratecpm.com/supss8jt7?key=97a240d7a1958f966ba7019a3f9a13ab"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                scrolling="no" allowfullscreen></iframe>
+    </div>
+    <button id="skip-btn" onclick="skipAd()" style="margin-top: 10px; padding: 10px 20px;">تخطي خلال 5</button>
+</div>
+
+<div id="thanks-message" style="display: none; text-align: center; padding: 20px; color: green;">
+    شكراً لمشاهدتك الإعلان!
+</div>
+
+<script>
 document.addEventListener("DOMContentLoaded", function () {
     let countdown = 5;
     const skipBtn = document.getElementById("skip-btn");
@@ -186,6 +284,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 3000);
     };
 });
-    </script>
+</script>
 </body>
 </html>
