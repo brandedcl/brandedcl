@@ -159,5 +159,33 @@
 
 
 <script src="js/script.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    let countdown = 5;
+    const skipBtn = document.getElementById("skip-btn");
+
+    skipBtn.disabled = true;
+    skipBtn.innerText = "تخطي خلال " + countdown;
+
+    const timer = setInterval(() => {
+        countdown--;
+        if (countdown > 0) {
+            skipBtn.innerText = "تخطي خلال " + countdown;
+        } else {
+            clearInterval(timer);
+            skipBtn.innerText = "تخطي الإعلان";
+            skipBtn.disabled = false;
+        }
+    }, 1000);
+
+    window.skipAd = function () {
+        document.getElementById("ad-container").style.display = "none";
+        document.getElementById("thanks-message").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("thanks-message").style.display = "none";
+        }, 3000);
+    };
+});
+    </script>
 </body>
 </html>
